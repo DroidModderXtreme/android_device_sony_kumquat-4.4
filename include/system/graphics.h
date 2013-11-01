@@ -74,6 +74,29 @@ enum {
     HAL_PIXEL_FORMAT_sRGB_A_8888        = 0xC,
     HAL_PIXEL_FORMAT_sRGB_X_8888        = 0xD,
 
+ /*
+     * Android Y8 format:
+     *
+     * This format is exposed outside of the HAL to the framework.
+     * The expected gralloc usage flags are SW_* and HW_CAMERA_*,
+     * and no other HW_ flags will be used.
+     *
+     * Y8 is a YUV planar format comprised of a WxH Y plane,
+     * with each pixel being represented by 8 bits.
+     *
+     * It is equivalent to just the Y plane from YV12.
+     *
+     * This format assumes
+     * - an even width
+     * - an even height
+     * - a horizontal stride multiple of 16 pixels
+     * - a vertical stride equal to the height
+     *
+     *   size = stride * height
+     *
+     */
+    HAL_PIXEL_FORMAT_Y8     = 0x20203859,
+    
     /* 0x8 - 0xFF range unavailable */
 
     /*
