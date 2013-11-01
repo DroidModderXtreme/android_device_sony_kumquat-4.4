@@ -1,1 +1,2 @@
-add_lunch_combo full_nypon-userdebug
+add_lunch_combo full_kumquat-userdebug
+add_lunch_combo full_kumquat-eng
