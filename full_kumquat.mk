@@ -27,16 +27,16 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 #charging animation
-$(call inherit-product, device/sony/nypon/prebuilt/resources-540x960.mk)
+$(call inherit-product, device/sony/kumquat/prebuilt/resources-540x960.mk)
 
-# Inherit from nypon device
-$(call inherit-product, device/sony/nypon/nypon.mk)
+# Inherit from kumquat device
+$(call inherit-product, device/sony/kumquat/kumquat.mk)
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=ST22i_1257-4009 BUILD_FINGERPRINT=SEMC/ST22i_1257-4009/ST22i:4.0.4/6.1.A.0.452/O_5_zw:user/release-keys PRIVATE_BUILD_DESC="ST22i-user 4.0.4 6.1.A.0.452 O_5_zw test-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=ST25i_1262-1120 BUILD_FINGERPRINT=SEMC/ST25i_1262-1120/ST25i:4.0.4/6.1.1.B.1.10/9bt3zw:user/release-keys PRIVATE_BUILD_DESC="ST25i-user 4.0.4 6.1.1.B.1.10 9bt3zw test-keys"
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_nypon
-PRODUCT_DEVICE := nypon
+PRODUCT_NAME := full_kumquat
+PRODUCT_DEVICE := kumquat
 PRODUCT_BRAND := Sony
 PRODUCT_MANUFACTURER := Sony
-PRODUCT_MODEL := Xperia P
+PRODUCT_MODEL := Xperia U
