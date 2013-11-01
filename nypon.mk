@@ -18,9 +18,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 
 # Inherit the proprietary counterpart
-$(call inherit-product-if-exists, vendor/sony/nypon/nypon-vendor.mk)
+$(call inherit-product-if-exists, vendor/sony/kumquat/nypon-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/sony/nypon/overlay
+DEVICE_PACKAGE_OVERLAYS += device/sony/kumquat/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -45,17 +45,17 @@ PRODUCT_COPY_FILES += \
 
 # Configs
 PRODUCT_COPY_FILES += \
-    device/sony/nypon/config/media_codecs.xml:system/etc/media_codecs.xml \
-    device/sony/nypon/config/egl.cfg:system/lib/egl/egl.cfg \
-    device/sony/nypon/config/asound.conf:system/etc/asound.conf \
-    device/sony/nypon/config/dbus.conf:system/etc/dbus.conf \
-    device/sony/nypon/config/sysmon.cfg:system/etc/sysmon.cfg \
-    device/sony/nypon/config/hostapd.conf:system/etc/wifi/hostapd.conf \
-    device/sony/nypon/config/init.d/01stesetup:system/etc/init.d/01stesetup \
-    device/sony/nypon/config/init.d/10dhcpcd:system/etc/init.d/10dhcpcd \
-    device/sony/nypon/config/init.d/10hostapd:system/etc/init.d/10hostapd \
-    device/sony/nypon/config/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel \
-    device/sony/nypon/config/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    device/sony/kumquat/config/media_codecs.xml:system/etc/media_codecs.xml \
+    device/sony/kumquat/config/egl.cfg:system/lib/egl/egl.cfg \
+    device/sony/kumuqat/config/asound.conf:system/etc/asound.conf \
+    device/sony/kumuqat/config/dbus.conf:system/etc/dbus.conf \
+    device/sony/kumquat/config/sysmon.cfg:system/etc/sysmon.cfg \
+    device/sony/kumquat/config/hostapd.conf:system/etc/wifi/hostapd.conf \
+    device/sony/kumquat/config/init.d/01stesetup:system/etc/init.d/01stesetup \
+    device/sony/kumquat/config/init.d/10dhcpcd:system/etc/init.d/10dhcpcd \
+    device/sony/kumquat/config/init.d/10hostapd:system/etc/init.d/10hostapd \
+    device/sony/kumquat/config/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel \
+    device/sony/kumquat/config/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -155,29 +155,29 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # Custom init / uevent
 PRODUCT_COPY_FILES += \
-    device/sony/nypon/config/root/init.rc:root/init.rc \
-    device/sony/nypon/config/root/fstab.st-ericsson:root/fstab.st-ericsson \
-    device/sony/nypon/config/root/init.st-ericsson.rc:root/init.st-ericsson.rc \
-    device/sony/nypon/config/root/ueventd.st-ericsson.rc:root/ueventd.st-ericsson.rc
+    device/sony/kumquat/config/root/init.rc:root/init.rc \
+    device/sony/kumquat/config/root/fstab.st-ericsson:root/fstab.st-ericsson \
+    device/sony/kumquat/config/root/init.st-ericsson.rc:root/init.st-ericsson.rc \
+    device/sony/kumquat/config/root/ueventd.st-ericsson.rc:root/ueventd.st-ericsson.rc
 
 # Recovery bootstrap script
 PRODUCT_COPY_FILES += \
-    device/sony/nypon/recovery/bootrec:root/sbin/bootrec \
-    device/sony/nypon/recovery/usbid_init.sh:root/sbin/usbid_init.sh \
-    device/sony/nypon/recovery/postrecoveryboot.sh:root/sbin/postrecoveryboot.sh
+    device/sony/kumquat/recovery/bootrec:root/sbin/bootrec \
+    device/sony/kumquat/recovery/usbid_init.sh:root/sbin/usbid_init.sh \
+    device/sony/kumquat/recovery/postrecoveryboot.sh:root/sbin/postrecoveryboot.sh
 
 
 # HW Configs
 PRODUCT_COPY_FILES += \
-    device/sony/nypon/config/omxloaders:system/etc/omxloaders \
-    device/sony/nypon/config/ril_config:system/etc/ril_config \
-    device/sony/nypon/config/install_wlan:system/bin/install_wlan \
-    device/sony/nypon/config/ste_modem.sh:system/etc/ste_modem.sh
+    device/sony/kumquat/config/omxloaders:system/etc/omxloaders \
+    device/sony/kumquat/config/ril_config:system/etc/ril_config \
+    device/sony/kumquat/config/install_wlan:system/bin/install_wlan \
+    device/sony/kumquat/config/ste_modem.sh:system/etc/ste_modem.sh
 
 # GPS
 PRODUCT_COPY_FILES += \
-    device/sony/nypon/config/gps.conf:system/etc/gps.conf\
-    device/sony/nypon/config/cacert.txt:system/etc/suplcert/cacert.txt
+    device/sony/kumquat/config/gps.conf:system/etc/gps.conf\
+    device/sony/kumquat/config/cacert.txt:system/etc/suplcert/cacert.txt
 
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.mem.max_hidden_apps=10
@@ -279,7 +279,7 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
-$(call inherit-product-if-exists, vendor/sony/nypon/nypon-vendor.mk)
+$(call inherit-product-if-exists, vendor/sony/kumquat/kumquat-vendor.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240
