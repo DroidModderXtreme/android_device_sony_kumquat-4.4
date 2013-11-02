@@ -1,10 +1,10 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/sony/nypon/BoardConfigVendor.mk
+-include vendor/sony/kumquat/BoardConfigVendor.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/sony/nypon/include
-TARGET_SPECIFIC_HEADER_PATH += device/sony/nypon/hardware
+TARGET_SPECIFIC_HEADER_PATH := device/sony/kumquat/include
+TARGET_SPECIFIC_HEADER_PATH += device/sony/kumquat/hardware
 TARGET_SPECIFIC_HEADER_PATH += hardware/semc/bluetooth/glib
 TARGET_SPECIFIC_HEADER_PATH += hardware/semc/bluetooth/bluez/lib
 
@@ -35,8 +35,8 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_STE := true
 COMMON_GLOBAL_CFLAGS += -DSTE_BT
-BOARD_BLUEDROID_VENDOR_CONF := device/sony/nypon/hardware/bluetooth/vnd_u8500.txt
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/nypon/hardware/bluetooth/include
+BOARD_BLUEDROID_VENDOR_CONF := device/sony/kumquat/hardware/bluetooth/vnd_u8500.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/kumquat/hardware/bluetooth/include
 
 # Audio
 BOARD_USES_GENERIC_AUDIO := false
@@ -55,7 +55,7 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_wl12xx
 
 # Graphics
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/sony/nypon/config/egl.cfg
+BOARD_EGL_CFG := device/sony/kumquat/config/egl.cfg
 COMMON_GLOBAL_CFLAGS += -DSTE_HARDWARE
 
 # jb camera
@@ -73,24 +73,24 @@ COMMON_GLOBAL_CFLAGS += -DEGL_NEEDS_FNW
 TARGET_PROVIDES_LIBLIGHTS := true
 
 # ril implementation
-BOARD_RIL_CLASS := ../../../device/sony/nypon/telephony-common/
+BOARD_RIL_CLASS := ../../../device/sony/kumquat/telephony-common/
 
 # Custom boot
 TARGET_PROVIDES_INIT_RC := true
 TARGET_RECOVERY_PRE_COMMAND := "touch /cache/recovery/boot;sync;"
-BOARD_CUSTOM_BOOTIMG_MK := device/sony/nypon/custombootimg.mk
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/sony/nypon/releasetools/semc_ota_from_target_files
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/sony/nypon/recovery/recovery-keys.c
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/kumquat/custombootimg.mk
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/sony/kumquat/releasetools/semc_ota_from_target_files
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/sony/kumquat/recovery/recovery-keys.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_10x18.h\"
 
 #CWM recovery fix
-TARGET_RECOVERY_FSTAB = device/sony/nypon/config/root/fstab.st-ericsson
+TARGET_RECOVERY_FSTAB = device/sony/kumquat/config/root/fstab.st-ericsson
 RECOVERY_FSTAB_VERSION := 2
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/musb-ux500.0/musb-hdrc/gadget/lun%d/file"
 
 # Kernel information
-TARGET_KERNEL_CONFIG := xperiap_defconfig
+TARGET_KERNEL_CONFIG := xperiau_defconfig
 TARGET_KERNEL_SOURCE := kernel/sony/u8500
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
 BOARD_KERNEL_BASE := 0x40200000
@@ -108,7 +108,7 @@ BOARD_VOLD_MAX_PARTITIONS := 16
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01400000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01400000
-BOARD_CMDLINE := device/sony/nypon/config/cmdline.txt
+BOARD_CMDLINE := device/sony/kumquat/config/cmdline.txt
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1056964608
 BOARD_USERDATA_PARTITION_SIZE := 2147483648
@@ -123,4 +123,4 @@ BOARD_SDCARD_INTERNAL_DEVICE := /dev/block/mmcblk0p14
 
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=ST22i_1257-4009 BUILD_FINGERPRINT=SEMC/ST22i_1257-4009/ST22i:4.0.4/6.1.A.0.452/O_5_zw:user/release-keys PRIVATE_BUILD_DESC="ST22i-user 4.0.4 6.1.A.0.452 O_5_zw test-keys"
 
-TARGET_OTA_ASSERT_DEVICE := LT22i,LT22a,nypon
+TARGET_OTA_ASSERT_DEVICE := ST25i,ST25a,kumquat
