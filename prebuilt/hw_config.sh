@@ -1,4 +1,4 @@
-# HW configuration file for nypon
+# HW configuration file for kumquat
 
 # Proximity sensor configuration (NOA3402)
 dev=/sys/devices/platform/nmk-i2c.2/i2c-2/2-0037
